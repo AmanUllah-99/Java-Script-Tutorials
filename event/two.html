@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Two</title>
+</head>
+
+<body>
+    <h1> JS Events</h1>
+    <p>Welcome to the events page!</p>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+     let intervalId;
+
+ function printMassage(){
+  console.log("Amaan Ullah ", Date.now( ));
+  
+ }
+
+    const start = document.querySelector('#start').addEventListener('click', function () {
+        intervalId = setInterval(printMassage, 1000)
+        console.log("Started");
+        
+    })
+
+    const stop = document.querySelector('#stop').addEventListener('click', function () {
+        clearInterval(intervalId)
+        console.log("Stopped");
+        
+    })
+    // setInterval(start, 2000)
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BG Change </title>
+  <style>
+     
+
+    /* Apply a modern font */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* background: linear-gradient(135deg, #1e1e2f, #2c3e50); */
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Navigation styling */
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    nav a {
+      color: #00bcd4;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    /* Container styling */
+    .container {
+      display: inline-block;
+      text-align: center;
+      margin-top: 20px;
+
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Button styling */
+    button {
+      margin: 10px;
+      background-color: #00bcd4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+
+    button:hover {
+      background-color: #008c9e;
+    }
+ 
+  </style>
+
+</head>
+
+<body>
+  <nav>
+    <a href="index.html"> Home</a>
+    <a target="_blank" href="https://github.com/Aman-haider">GitHub</a>
+  </nav>
+  <h1> background-color change</h1>
+
+  <div >
+    <button id="Start">Start Color Change</button>
+    <button id="stop">Stop Color Change</button>
+  </div>
+
+</body>
+<script>
+  //// ramdom color generator function
+  const randomColar = function () {
+    const hex = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += hex[Math.floor(Math.random() *16)];
+    }
+
+    return color;
+
+  }
+  
+  
+ let intervalId;
+
+ const changeBGColor = function () {
+  let change = function () {
+     document.body.style.backgroundColor = randomColar();
+  };
+
+   
+  if (!intervalId) {
+    intervalId = setInterval(change, 1000);
+  }
+  };
+
+ const BGStop = function () {
+ clearInterval(intervalId);
+ intervalId = null;
+ }
+  
+document.querySelector('#Start').addEventListener('click', changeBGColor)
+document.querySelector('#stop').addEventListener('click',  BGStop )
+</script>
+
+</html>
