@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Api-Request</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Api-Request</title>
 </head>
 <body>
-    <h1>Api-Request</h1>
-    <button id="fetchDataBtn">Fetch Data from API</button>
-    <pre id="apiData" style="white-space: pre-wrap; word-wrap: break-word;"></pre>
-    <script>
-        document.getElementById('fetchDataBtn').addEventListener('click', () => {
-            fetch('https://jsonplaceholder.typicode.com/posts')
-                .then(response => response.json())
-                .then(data => {
-                    const apiDataElement = document.getElementById('apiData');
-                    apiDataElement.textContent = JSON.stringify(data, null, 2);
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                });
-        });
-        
-    </script>
-    
+  <h1>Api-Request</h1>
+  
 </body>
+
+<script>
+console.log("amaanullah");
+
+const requestURL = 'https://api.github.com/users/hiteshchoudhary';
+const xhr = new XMLHttpRequest();
+
+xhr.open('GET', requestURL);
+
+xhr.onreadystatechange = function () {
+    console.log(xhr.readyState);
+
+    if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText);
+        console.log(typeof data);
+        
+        console.log(data.followers);
+    }
+};
+
+xhr.send();
+</script>
+
 </html>

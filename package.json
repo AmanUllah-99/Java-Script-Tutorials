@@ -1,0 +1,20 @@
+{
+  "name": "java-script-tutorials",
+  "version": "1.0.0",
+  "description": "Node Project",
+  "homepage": "https://github.com/AmanUllah-99/Java-Script-Tutorials#readme",
+  "bugs": {
+    "url": "https://github.com/AmanUllah-99/Java-Script-Tutorials/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmanUllah-99/Java-Script-Tutorials.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
