@@ -1,3 +1,4 @@
+//////////*********Promise One  */
 const promiseOne = new Promise(function (resolve , reject ){
    setTimeout(function (){
  console.log("task one completed");
@@ -10,7 +11,7 @@ promiseOne.then(function(){
     console.log("task one consumed");
     
 })
-
+//////////*********Promise Two  */
 new Promise(function (resolve , reject){
 setTimeout(function(){
   console.log("async task two");
@@ -21,7 +22,7 @@ setTimeout(function(){
   console.log("async two comsumed");
   
 })
-
+//////////*********Promise third  */
 const promiseThird = new Promise(function(resolve,reject){
 setTimeout(function(){
   resolve({username : "amaan", password:"aman@9990",email: "amaan@example.com"})
@@ -32,7 +33,7 @@ promiseThird.then(function(user){
 console.log(user);
 
 })
-
+//////////*********Promise Four  */
 
 const PromiseFoure = new Promise(function(resolve, reject){
   setTimeout(function (){
@@ -55,4 +56,58 @@ PromiseFoure.then((user)=>{
 console.log(error);
 
 }).finally(()=> console.log("This Promise is Etheir resolve and reject" ));
+
+//////////*********Promise five */
+const promiseFive = new Promise(function(resolve,reject){
+      setTimeout(function(){
+        let error = false
+        if(!error){
+          resolve({username:"zeshn",password:"1234"})
+        }else{
+          reject('ERROR:wrong username and password')
+        }
+      },1000)
+
+})
+
+async function promiseFiveResponse(){
+ try{
+  const p5 =  await promiseFive
+ console.log(p5);
+ }catch(error){
+  console.log(error);
+  
+ }
  
+}
+promiseFiveResponse()
+
+///////// fetch simple///////
+/*
+
+async function allUser() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+    const data = await response.json()
+    console.log(data)
+    
+    
+  } catch (error) {
+    console.log("E: ", error);
+    
+  }
+  
+}
+allUser()
+*/
+fetch('https://jsonplaceholder.typicode.com/posts')
+.then((resolve)=>{
+  return resolve.json()
+
+})
+.then((data)=>{
+console.log(data);
+
+})
+.catch((error)=>console.log(error)
+)
