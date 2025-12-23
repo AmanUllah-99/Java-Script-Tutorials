@@ -39,3 +39,6 @@ const userTwo = new  User ("Zshn" , 88, false)
 console.log(userOne);
 console.log(userTwo);
 
+
+
+
