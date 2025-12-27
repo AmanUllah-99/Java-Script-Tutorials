@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <h1>Hello!</h1>
+    <button>submit</button>
+</body>
+<script>
+    class react {
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+            ///// requirment
+            document.querySelector('button').addEventListener('click',this.handleClick
+            .bind(this))
+
+        }
+        handleClick(){
+            console.log(" Form submit!");
+            console.log(this);
+            
+            
+        }
+    }
+    const app = new react()
+</script>
+</html>
